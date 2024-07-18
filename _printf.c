@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 					str = va_arg(args, char *);
 					if (str == NULL)
 					{
-						write(1, "(null)", _strlen("(null)"));
+						w = write(1, "(null)", 6);
 					}
 					else
 					{
@@ -39,10 +39,14 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					w = write(1, &format[i], 1);
+						w = write(1, &format[i], 1);
 					break;
+				case 'd':
+					w = write(1, &format[i], );
+				case 'i':
+					w = write(1, %format[i]);
 				default:
-					w = write(1, &format[i], 1);
+					w = write(1, &format[i], 2);
 					break;
 			}
 			i += 2;
@@ -54,6 +58,7 @@ int _printf(const char *format, ...)
 			}
 			count += w;
 	}
+	printf("%d", count);
 	va_end(args);
 	return (count);
 }

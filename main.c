@@ -17,12 +17,25 @@ int main(void)
     int len4;
     int len5;
     int len6;
+    int len7;
+    int len8;
+    int len9;
+    int len10;
 
+    (void)len7;
+    (void)len7;
+    (void)len8;
+        (void)len9;
+	(void)len10;
     (void)len5;
     (void)len6;
     (void)len3;
     (void)len4;
 
+	len7 = _printf("%");
+	len8 = printf("%");
+	len9 = _printf("%!\n");
+	len10 = printf("%!\n");
     len6 = printf("%%%\n");
     len5 = _printf("%%%\n");
     len4 = _printf("Complete the sentence: You (null) nothing, Jon Snow.\n");
