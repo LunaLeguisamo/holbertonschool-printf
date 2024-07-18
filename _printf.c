@@ -36,13 +36,16 @@ int _printf(const char *format, ...)
 					break;
 			}
 			if (format[i + 2] == '%')
+			{
+				write(1, &format[i], 1);
 				i++;
+			}
 			i++;
 		}
 		else
 			w = write(1, &format[i], 1);
 		if (format[i] == 0)
-			w = write(1, "(null)", 6);
+			w = write(1, "(null)", _strlen("(null)"));
 		count = count + w;
 		i++;
 	}
