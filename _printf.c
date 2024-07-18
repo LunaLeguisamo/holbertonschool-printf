@@ -3,50 +3,48 @@
 #include <unistd.h>
 #include "main.h"
 
-int _strlen(char *s)
-{
-  int lent;
-
-  for (lent = 0; s[lent] != '\0'; lent++)
-  {
-  }
-  return (lent);
-}
+/**
+ * _printf - Function that prints
+ * @format: A list
+ * Return: Counter, the len of all
+ */
 
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int i = 0, count = 0, w = 0;
-    char c;
-    char *str;
+	va_list args;
+	int i = 0, count = 0, w = 0;
+	char c;
+	char *str;
 
-  va_start(args, format);
-  while (format[i])
-    {
-      if (format[i] == '%')
-      {
-        switch (format[i + 1])
-          {
-            case 'c':
-              c = va_arg(args, int);
-              w = write(1, &c, 1);
-              break;
-            case 's':
-              str = va_arg(args, char *);
-              w = write(1, str, _strlen(str));
-              break;
-            case '%':
-              w = write(1, &format[i], 1);
-              break;
-          }
-        i++;
-      }
-      else
-        w = write(1, &format[i], 1);
-        
-      count = count + w;
-      i++;
-   }
-  return count;
+	va_start(args, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			switch (format[i + 1])
+			{
+				case 'c':
+					c = va_arg(args, int);
+					w = write(1, &c, 1);
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					w = write(1, str, _strlen(str));
+					break;
+				case '%':
+					w = write(1, &format[i], 1);
+					break;
+			}
+			if (format[i + 2] == '%')
+				i++;
+			i++;
+		}
+		else
+			w = write(1, &format[i], 1);
+		if (format[i] == 0)
+			w = write(1, "(null)", 6);
+		count = count + w;
+		i++;
+	}
+	return (count);
 }
-
