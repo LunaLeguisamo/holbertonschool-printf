@@ -15,8 +15,16 @@ int main(void)
     void *addr;
     int len3;
     int len4;
+    int len5;
+    int len6;
+
+    (void)len5;
+    (void)len6;
     (void)len3;
     (void)len4;
+
+    len6 = printf("%%%\n");
+    len5 = _printf("%%%\n");
     len4 = _printf("Complete the sentence: You (null) nothing, Jon Snow.\n");
     len3 = printf("Complete the sentence: You (null) nothing, Jon Snow.\n");
     len = _printf("Let's try to printf a simple sentence.\n");

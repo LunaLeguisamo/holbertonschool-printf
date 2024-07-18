@@ -29,25 +29,31 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					w = write(1, str, _strlen(str));
+					if (str == NULL)
+					{
+						write(1, "(null)", _strlen("(null)"));
+					}
+					else
+					{
+						w = write(1, str, _strlen(str));
+					}
 					break;
 				case '%':
 					w = write(1, &format[i], 1);
 					break;
+				default:
+					w = write(1, &format[i], 1);
+					break;
 			}
-			if (format[i + 2] == '%')
+			i += 2;
+		}
+			else
 			{
-				write(1, &format[i], 1);
+				w = write(1, &format[i], 1);
 				i++;
 			}
-			i++;
-		}
-		else
-			w = write(1, &format[i], 1);
-		if (format[i] == 0)
-			w = write(1, "(null)", _strlen("(null)"));
-		count = count + w;
-		i++;
+			count += w;
 	}
+	va_end(args);
 	return (count);
 }
