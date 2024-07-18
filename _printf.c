@@ -46,8 +46,7 @@ int _printf(const char *format, ...)
         
       count = count + w;
       i++;
-    }
-  printf("%d", count);
+   }
   return count;
 }
 
