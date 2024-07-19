@@ -41,6 +41,8 @@ int _printf(const char *format, ...)
 				case '%':
 						w = write(1, &format[i], 1);
 					break;
+				case '\0':
+					break;
 /*				case 'd':
 					w = write(1, &format[i], 1);
 				case 'i':
