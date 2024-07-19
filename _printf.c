@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -15,9 +16,11 @@ int _printf(const char *format, ...)
 	int i = 0, count = 0, w = 0;
 	char c;
 	char *str;
+	int len;
 
 	va_start(args, format);
-	while (format[i])
+	len = strlen(format);
+	while (i < len)
 	{
 		if (format[i] == '%')
 		{
