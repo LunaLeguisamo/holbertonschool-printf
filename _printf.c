@@ -41,12 +41,12 @@ int _printf(const char *format, ...)
 				case '%':
 						w = write(1, &format[i], 1);
 					break;
-				case 'd':
-					w = write(1, &format[i], );
+/*				case 'd':
+					w = write(1, &format[i], 1);
 				case 'i':
-					w = write(1, %format[i]);
+					w = write(1, %format[i], 1);*/
 				default:
-					w = write(1, &format[i], 2);
+					w = write(1, &format[i], 1);
 					break;
 			}
 			i += 2;
@@ -58,7 +58,7 @@ int _printf(const char *format, ...)
 			}
 			count += w;
 	}
-	printf("%d", count);
+/*	printf("%d", count);*/
 	va_end(args);
 	return (count);
 }
