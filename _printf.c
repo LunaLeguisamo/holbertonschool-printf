@@ -17,7 +17,7 @@ int _putchar(char c)
 
 
 int _printint(int n) {
-  int i = 0;
+  long i = 0;
   int count = 0;
 
   if (n == 0) {
