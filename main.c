@@ -33,14 +33,21 @@ int main(void)
     (void)len4;
 
 
-len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-len2 = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+
+	len7 = _printf("%");
+	printf("--------------------------\n");
+	len8 = printf("%");
+	
+	printf("\n");
+
+	printf("--------------------------\n");
+	len = _printf("%!\n");
+	len2 = printf("%!\n");
+	printf("--------------------------\n");
+
 
     printf("len de _printf = %d\n", len);
     printf("en de printf = %d\n", len2);
-
-	len7 = _printf("%");
-	len8 = printf("%");
 	len9 = _printf("%!\n");
 	len10 = printf("%!\n");
     len6 = printf("%%%\n");

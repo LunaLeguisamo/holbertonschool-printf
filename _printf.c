@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 				case 'i':
 					w = write(1, %format[i], 1);*/
 				default:
-					w = write(1, &format[i], 1);
+					w = write(1, &format[i], 2);
 					break;
 			}
 			i += 2;
@@ -58,7 +58,6 @@ int _printf(const char *format, ...)
 			}
 			count += w;
 	}
-/*	printf("%d", count);*/
 	va_end(args);
 	return (count);
 }
