@@ -16,7 +16,7 @@ int _putchar(char c)
 }
 
 
-int _printint(int n) {
+int _printint(long n) {
   long i = 0;
   int count = 0;
 
@@ -26,9 +26,9 @@ int _printint(int n) {
   if (n < 0)
   {
     count += _putchar('-');
-    n = -n;
+    n = n * -1;
   }
-  for (i = 1; i < n; i *= 10) {
+  for (i = 1; i <= n; i *= 10) {
   }
     i /= 10;
 

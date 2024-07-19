@@ -80,6 +80,13 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    
+   
+
+	_printf("%d\n", INT_MIN);
+	printf("%d\n", INT_MIN);
+	printf("\n");
+	_printf("%d\n", 10000);
+	printf("%d\n", 10000);
+
     return (0);
 }
