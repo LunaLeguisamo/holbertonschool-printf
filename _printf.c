@@ -10,6 +10,34 @@
  * Return: Counter, the len of all
  */
 
+int _putchar(char c)
+{
+  return (write(1, &c, 1));
+}
+
+
+int _printint(int n) {
+  int i = 0;
+  int count = 0;
+
+  if (n == 0) {
+    return (_putchar('0'));
+  }
+  if (n < 0)
+  {
+    count += _putchar('-');
+    n = -n;
+  }
+  for (i = 1; i < n; i *= 10) {
+  }
+    i /= 10;
+
+  for (; i >= 1; i /= 10) {
+    count += _putchar(n / i % 10 + '0');
+    }
+  return (count);
+}
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -38,7 +66,7 @@ int _printf(const char *format, ...)
 					}
 					else
 					{
-						w = write(1, str, _strlen(str));
+						w = write(1, str, strlen(str));
 					}
 					break;
 				case '%':
@@ -47,10 +75,12 @@ int _printf(const char *format, ...)
 				case '\0':
 					w = -1;
 					break;
-/*				case 'd':
-					w = write(1, &format[i], 1);
+				case 'd':
+					w = _printint(va_arg(args, int));
+					break;
 				case 'i':
-					w = write(1, %format[i], 1);*/
+					w = _printint(va_arg(args, int));
+					break;
 				default:
 					w = write(1, &format[i], 2);
 					break;
