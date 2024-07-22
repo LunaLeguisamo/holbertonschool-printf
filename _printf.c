@@ -4,6 +4,11 @@
 #include <string.h>
 #include "main.h"
 
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
 /**
  * _printint - prints an integer to stdout
  * @n: The integer to print
