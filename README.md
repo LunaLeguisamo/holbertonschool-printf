@@ -36,16 +36,16 @@
   <div class="section">
     <h2>Usage Example</h2>
     <pre><code>#include &lt;stdio.h&gt;
-#include "your_printf_header.h"
+#include "main.h"
 
 int main() {
-    int num = 123;
+    int num = 987;
     char ch = 'A';
     char *str = "Hello, World!";
 
     _printf("Character: %c\n", ch);         // Output: Character: A
     _printf("String: %s\n", str);           // Output: String: Hello, World!
-    _printf("Integer: %d\n", num);          // Output: Integer: 123
+    _printf("Integer: %d\n", num);          // Output: Integer: 987
     _printf("Percent sign: %%\n");          // Output: Percent sign: %
 
     return 0;
