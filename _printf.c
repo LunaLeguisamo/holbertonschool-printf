@@ -5,16 +5,11 @@
 #include "main.h"
 
 /**
- * _printf - Function that prints
- * @format: A list
- * Return: Counter, the len of all
+ * _printint - prints an integer to stdout
+ * @n: The integer to print
+ *
+ * Return: The number of characters printed
  */
-
-int _putchar(char c)
-{
-  return (write(1, &c, 1));
-}
-
 
 int _printint(long n) {
   long i = 0;
@@ -37,6 +32,13 @@ int _printint(long n) {
     }
   return (count);
 }
+
+/**
+ * _printf - prints formatted output to stdout
+ * @format: The format string
+ *
+ * Return: The number of characters printed
+ */
 
 int _printf(const char *format, ...)
 {
