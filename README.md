@@ -44,7 +44,9 @@ int main() {
     return 0;
 }
 ```
-`
+## Flowchart
+![Diagrama de flujo](https://github.com/user-attachments/assets/b63618be-4739-421d-83b9-331859f0e210)
+
 ## Function _printint
 Was create to print integers after be converts in characters.
 This function is implemented in the code of `_printf` to print integers.
